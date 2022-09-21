@@ -17,20 +17,21 @@ import javax.validation.Valid;
 @RequestMapping("/people")
 public class PeopleController {
     private final PeopleService peopleService;
-//    private final ItemService itemService;
+    private final ItemService itemService;
 
     @Autowired
-    public PeopleController(PeopleService peopleService) {
+    public PeopleController(PeopleService peopleService, ItemService itemService) {
         this.peopleService = peopleService;
+        this.itemService = itemService;
     }
 
 
     @GetMapping()
     public String index(Model model) {
         model.addAttribute("people", peopleService.findAll());
-//        itemService.findByItemName("Airpods");
-//        itemService.findByOwner(peopleService.findAll().get(0));
-//        peopleService.test();
+        itemService.findByItemName("Airpods");
+        itemService.findByOwner(peopleService.findAll().get(1));
+        peopleService.test();
         return "people/index";
     }
 
@@ -66,7 +67,6 @@ public class PeopleController {
                          @PathVariable("id") int id) {
         if (bindingResult.hasErrors())
             return "people/edit";
-
         peopleService.update(id, person);
         return "redirect:/people";
     }
