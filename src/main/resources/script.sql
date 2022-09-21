@@ -21,3 +21,7 @@ INSERT INTO Item(person_id, item_name) VALUES (3, 'TV');
 INSERT INTO Item(person_id, item_name) VALUES (3, 'PlayStation');
 
 ALTER TABLE Person ADD COLUMN email varchar(100) UNIQUE;
+
+ALTER TABLE Person ADD COLUMN date_of_birth DATE;
+
+ALTER TABLE Person ADD COLUMN created_at TIMESTAMP ;
