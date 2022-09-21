@@ -21,3 +21,12 @@ INSERT INTO Item(person_id, item_name) VALUES (3, 'TV');
 INSERT INTO Item(person_id, item_name) VALUES (3, 'PlayStation');
 
 ALTER TABLE Person ADD COLUMN email varchar(100) UNIQUE;
+
+-- SpringData
+
+INSERT INTO PERSON(name, age, email) VALUES ('Tom', 25, 'tom@mail.com');
+INSERT INTO PERSON(name, age, email) VALUES ('Bob', 31, 'bob1@mail.com');
+INSERT INTO PERSON(name, age, email) VALUES ('Bob', 53, 'bob2@mail.com');
+INSERT INTO PERSON(name, age, email) VALUES ('Bob', 20, 'bob3@mail.com');
+INSERT INTO PERSON(name, age, email) VALUES ('Katy', 14, 'katy@mail.com');
+

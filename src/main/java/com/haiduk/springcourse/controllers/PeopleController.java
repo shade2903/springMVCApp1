@@ -1,11 +1,10 @@
 package com.haiduk.springcourse.controllers;
 
 
-import com.haiduk.springcourse.dao.PersonDAO;
 import com.haiduk.springcourse.models.Person;
 
+import com.haiduk.springcourse.services.ItemService;
 import com.haiduk.springcourse.services.PeopleService;
-import com.haiduk.springcourse.util.PersonValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +17,7 @@ import javax.validation.Valid;
 @RequestMapping("/people")
 public class PeopleController {
     private final PeopleService peopleService;
+//    private final ItemService itemService;
 
     @Autowired
     public PeopleController(PeopleService peopleService) {
@@ -28,6 +28,9 @@ public class PeopleController {
     @GetMapping()
     public String index(Model model) {
         model.addAttribute("people", peopleService.findAll());
+//        itemService.findByItemName("Airpods");
+//        itemService.findByOwner(peopleService.findAll().get(0));
+//        peopleService.test();
         return "people/index";
     }
 
