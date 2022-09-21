@@ -27,6 +27,8 @@ public class Person {
     @NotEmpty(message = "Email should not be empty")
     @Email
     private String email;
+    @Enumerated(EnumType.ORDINAL)
+    private Mood mood;
 
 
     public Person() {
@@ -68,6 +70,14 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Mood getMood() {
+        return mood;
+    }
+
+    public void setMood(Mood mood) {
+        this.mood = mood;
     }
 }
 

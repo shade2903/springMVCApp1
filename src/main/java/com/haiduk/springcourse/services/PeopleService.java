@@ -1,5 +1,6 @@
 package com.haiduk.springcourse.services;
 
+import com.haiduk.springcourse.models.Mood;
 import com.haiduk.springcourse.models.Person;
 import com.haiduk.springcourse.repositories.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class PeopleService {
 
     @Transactional
     public void save(Person person){
+        person.setMood(Mood.CALM);
         peopleRepository.save(person);
     }
 
